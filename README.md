@@ -22,24 +22,24 @@ Steps to build a Docker image:
 1. Clone this repo:
 
 ```
-$ git clone https://github.com/melffagundes/weather_api.git
+$ git clone https://github.com/melffagundes/weather_buddy.git
 ```
 
-Now let’s start the services with `docker commands:`
+Now let’s start the services with `docker-compose.`
 
 ```bash
  docker build . -t deploy_flask  
 ```
 
- After the build completes, we can run the container:
+ To check if the services are running enter the following command:
 
 ```bash
 docker run -p 5000:5000 -t -i deploy_flask:latest 
 ```
 
-Now you can now access [here](http://localhost:5000/weather/) the Flask application. 
+You can now access [here](http://localhost:5000/weather/) the Flask application. 
 
-Also, you can now access it [here](http://localhost:5000/api/swagger), and go to Swagger and do the tests on the weather endpoints.
+Also, you can now access it [here](http://localhost:5000/api/swagger), and let’s go to Swagger and do the request on the weather endpoint.
 
 {% api-method method="get" host="http://localhost:5000" path="/weather/" %}
 {% api-method-summary %}
@@ -134,15 +134,8 @@ You can also run tests Weather API:
 I assume you have installed pytest.
 
 {% hint style="info" %}
-See the [pytest](https://docs.pytest.org/en/6.2.x/) documentation for installation instructions
+See the pytest documentation for installation instructions
 {% endhint %}
-
-Now, use the command line to run pytest:
-
-```bash
-pytest
-
-```
 
 
 
