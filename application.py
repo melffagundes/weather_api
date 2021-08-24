@@ -8,11 +8,9 @@ from flask_restx import Api
 import conf
 import instance
 
-
 app, api = instance.server.app, instance.server.api
 
 # Variables
-
 API_KEY = conf.Config.OPENW_KEY
 API_URL = conf.Config.API_URL
 ns = api.namespace('weather', description='Weather API')
@@ -65,6 +63,4 @@ class CitiesList(Resource):
         except KeyError as e:
             ns.abort(500, e.__doc__, status="Intern server error", statusCode="500")
 
-#
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0', port=5000, debug=True)
+

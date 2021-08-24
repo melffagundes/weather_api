@@ -1,6 +1,7 @@
 import pytest
 import application
 
+# client is a fixture, injected by the `pytest-flask` plugin
 def test_get_last_cities_nocache(client):
     """
         GIVEN a Flask application configured for testing
@@ -67,7 +68,7 @@ def test_last_max_default(client):
     assert (b"Barcelona" in response.data) & (b"Recife" in response.data) & (b"Rio de Janeiro" in response.data) & (b"Belo Horizonte" in response.data) & (b"Sorocaba" in response.data)
 
 
-# client is a fixture, injected by the `pytest-flask` plugin
+
 def test_get_city_notfound(client):
     """
         GIVEN a Flask application configured for testing
