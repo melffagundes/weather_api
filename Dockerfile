@@ -14,4 +14,4 @@ ENV FLASK_ENV=development
 
 COPY . .
 ENTRYPOINT [ "flask"]
-CMD [ "run"]
+CMD ["run", "--host", "0.0.0.0"]
